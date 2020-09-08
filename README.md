@@ -44,7 +44,7 @@
 
 <br/>
 
-Bookstore Redux App is a web application built with react and redux, this web aplication has  a booklist component to show all books, book form to create new books,  apply some filter to list of books, filter books by categories.  
+Bookstore Redux App is a web application built with react and redux, this web application has a booklist component to show all books, book form to create new books, apply some filter to list of books, filter books by categories.
 
 <br/>
 <!--- 
