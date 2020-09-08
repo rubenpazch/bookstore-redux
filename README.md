@@ -16,12 +16,12 @@
         <img src="https://img.shields.io/badge/Microverse-blueviolet" /></a>
     <a href="https://www.w3schools.com/js/js_es6.asp" alt="JavaScript">
         <img src="https://img.shields.io/badge/JavaScript-6.0.0-yellowgreen" /></a>
-    <a href="https://webpack.js.org/" alt="Webpack">
-        <img src="https://img.shields.io/badge/Webpack%204-4.0.0-lightgrey" /></a>
-    <a href="http://phaser.io/" alt="Phaser">
-        <img src="https://img.shields.io/badge/Phaser3-3.23.0-green" /></a>
-    <a href="https://jestjs.io/docs/en/getting-started" alt="Jest">
-        <img src="https://img.shields.io/badge/Jest-26.1.0-red" /></a>  
+    <a href="https://reactjs.org/" alt="React">
+        <img src="https://img.shields.io/badge/React-built-orange" /></a>
+    <a href="https://nodejs.org/es/" alt="Node">
+        <img src="https://img.shields.io/badge/Node.js-Built-green" /></a>
+    <a href="https://redux.js.org/" alt="Redux">
+        <img src="https://img.shields.io/badge/Redux-built-lightgrey" /></a>  
     <a href="https://www.heroku.com/" alt="Heroku">
         <img src="https://img.shields.io/badge/Heroku-published-lightgrey" /></a>
 </p>
@@ -30,11 +30,11 @@
 
   <p align="center">    
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore this project »</strong></a>
+    <a href="https://github.com/rubenpazch/bookstore-redux"><strong>Explore this project »</strong></a>
     <br />
     <br />&#10023;
-    <a href="https://phasershootergamejs.herokuapp.com/">View Demo</a>   &#10023;  
-    <a href="https://github.com/rubenpazch/shooter-game/issues">Report Bug</a>    &#10023;
+    <a href="https://bookstore-reactredux.herokuapp.com/">View Demo</a>   &#10023;  
+    <a href="https://github.com/rubenpazch/bookstore-redux/issues">Report Bug</a>    &#10023;
     <a href="#Getting-Started">Getting Started</a> &#10023; <a href="#Install">Installing</a> &#10023;    
     <a href="#Authors">Author</a> &#10023;
     <a href="#Instructions-to-play-the-game">Instructions to play the game</a> &#10023;
