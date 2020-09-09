@@ -1,14 +1,8 @@
-import * as ActionTypes from '../constants/action-types';
+import { combineReducers } from 'redux';
+import booksReducer from './books';
 
-const initialState = {
-  books: [],
-};
-
-export default function rootReducer(state = initialState, action) {
-  switch (action.type) {
-    case ActionTypes.ADD_BOOK:
-      return { ...state, books: state.books.concat(action.payload) };
-    default:
-      return state;
-  }
+export default function rootReducer(initialState) {
+  return combineReducers({
+    booksReducer: booksReducer(initialState),
+  });
 }
