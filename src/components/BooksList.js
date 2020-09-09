@@ -5,29 +5,19 @@ import Book from './Book';
 const mapStateToProps = state => ({ books: state.booksReducer.books });
 
 function BooksList(props) {
+  // console.log(props.books[0]);
   const { books } = props;
   return (
     <table>
       <thead>
-        <th>
-          <td>ID</td>
+        <tr>
+          <td>Id</td>
           <td>Title</td>
           <td>Category</td>
-        </th>
+        </tr>
       </thead>
       <tbody>
-        {
-          books.map(book => (
-            <Book
-              key={book.idBook}
-              book={{
-                idBook: book.idBook,
-                title: book.title,
-                category: book.category,
-              }}
-            />
-          ))
-        }
+        {books.map(b => (<Book book={b} />))}
       </tbody>
     </table>
   );

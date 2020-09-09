@@ -7,7 +7,7 @@ export default function Booksform() {
     <form>
       <label htmlFor="book-title">
         Title
-        <input type="text" name="title" placeHolder="Title" />
+        <input type="text" name="title" />
       </label>
       <label htmlFor="book-title">
         Categorie
