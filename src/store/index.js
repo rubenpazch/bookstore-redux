@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import rootReducer from '../reducers/index';
 
-const randonId = () => Math.floor(Math.randon() * 1000);
+const randonId = () => Math.floor(Math.random() * 1000);
 
 const initialState = {
   books: [
@@ -12,5 +12,4 @@ const initialState = {
   ],
 };
 
-// eslint-disable-next-line import/prefer-default-export
 export const store = createStore(rootReducer(initialState));

@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Book from './Book';
 
-const mapStateToProps = state => ({ books: state.books });
+const mapStateToProps = state => ({ books: state.booksReducer.books });
 
-function BooksList(books) {
+function BooksList(props) {
+  const { books } = props;
   return (
     <table>
       <thead>
@@ -15,12 +16,21 @@ function BooksList(books) {
         </th>
       </thead>
       <tbody>
-        <Book book={books} />
+        {
+          books.map(book => (
+            <Book
+              key={book.idBook}
+              book={{
+                idBook: book.idBook,
+                title: book.title,
+                category: book.category,
+              }}
+            />
+          ))
+        }
       </tbody>
     </table>
   );
 }
 
-const List = connect(mapStateToProps)(BooksList);
-
-export default List;
+export default connect(mapStateToProps)(BooksList);

@@ -1,4 +1,4 @@
-import * as ActionTypes from '../actions/index';
+import * as ActionTypes from '../constants/action-types';
 
 const booksReducer = initialState => (state = initialState, action) => {
   switch (action.type) {
