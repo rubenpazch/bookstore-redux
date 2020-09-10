@@ -9,6 +9,7 @@ const initialState = {
     { idBook: randonId(), title: 'book2', category: 'Action' },
     { idBook: randonId(), title: 'book3', category: 'History' },
     { idBook: randonId(), title: 'book4', category: 'Action' },
+    { idBook: randonId(), title: 'book5', category: 'Action' },
   ],
 };
 
