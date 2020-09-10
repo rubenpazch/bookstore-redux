@@ -7,6 +7,12 @@ const booksReducer = initialState => (state = initialState, action) => {
         ...state,
         books: state.books.concat(action.payload),
       };
+    case ActionTypes.REMOVE_BOOK:
+      return {
+        books: [
+          ...state.books.filter(b => b !== action.payload),
+        ],
+      };
     default:
       return state;
   }
