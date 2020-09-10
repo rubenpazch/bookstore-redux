@@ -10,25 +10,15 @@ function BooksList(props) {
   return (
     <table>
       <thead>
-        <th>
-          <td>ID</td>
+        <tr>
+          <td>Id</td>
           <td>Title</td>
           <td>Category</td>
-        </th>
+          <td>Delete</td>
+        </tr>
       </thead>
       <tbody>
-        {
-          books.map(book => (
-            <Book
-              key={book.idBook}
-              book={{
-                idBook: book.idBook,
-                title: book.title,
-                category: book.category,
-              }}
-            />
-          ))
-        }
+        {books.map(b => (<Book key={b.idBook} book={b} />))}
       </tbody>
     </table>
   );
