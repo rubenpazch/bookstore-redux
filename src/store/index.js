@@ -2,7 +2,6 @@ import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from '../reducers/index';
 
-
 const randonId = () => Math.floor(Math.random() * 1000);
 
 const initialState = {
@@ -17,3 +16,4 @@ const initialState = {
 
 // eslint-disable-next-line import/prefer-default-export
 export const store = createStore(rootReducer(initialState), composeWithDevTools());
+// console.log(store.getState());
