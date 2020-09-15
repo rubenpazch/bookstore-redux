@@ -19,7 +19,7 @@ function Book(props) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  removeBook: book => dispatch(removeBook(book)),
+  removeBook: idBook => dispatch(removeBook(idBook)),
 });
 
 Book.propTypes = {

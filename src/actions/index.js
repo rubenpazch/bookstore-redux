@@ -5,12 +5,10 @@ const createBook = book => ({
   payload: book,
 });
 
-const removeBook = idBook => (
-  {
-    type: ActionTypes.REMOVE_BOOK,
-    payload: idBook,
-  }
-);
+const removeBook = idBook => ({
+  type: ActionTypes.REMOVE_BOOK,
+  payload: idBook,
+});
 
 export {
   createBook,
