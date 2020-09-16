@@ -7,7 +7,7 @@ function CategoryFilter() {
     <label htmlFor="book-title">
       Categorie
       <select name="category" id="category">
-        <option>Choose a category</option>
+        <option>All</option>
         {categories.map(c => <option key={c} value={c}>{c}</option>)}
       </select>
     </label>

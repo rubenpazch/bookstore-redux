@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
 import { removeBook } from '../actions/index';
+import CategoryFilter from './CategoryFilter';
 
 const mapStateToProps = state => ({
   books: state.booksReducer.books,
@@ -26,19 +27,23 @@ class BooksList extends Component {
   render() {
     const { books } = this.props;
     return (
-      <table>
-        <thead>
-          <tr>
-            <td>Id</td>
-            <td>Title</td>
-            <td>Category</td>
-            <td>Delete</td>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map(b => (<Book key={b.idBook} book={b} onClick={this.handleRemoveBook} />))}
-        </tbody>
-      </table>
+      <div>
+        <CategoryFilter/>
+        <table>
+          <thead>
+            <tr>
+              <td>Id</td>
+              <td>Title</td>
+              <td>Category</td>
+              <td>Delete</td>
+            </tr>
+          </thead>
+          <tbody>
+            {books.map(b => (<Book key={b.idBook} book={b} onClick={this.handleRemoveBook} />))}
+          </tbody>
+        </table>
+      </div>
+
     );
   }
 }
