@@ -1,37 +1,46 @@
-import React from 'react';
 import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
+import { removeBook } from '../actions/index';
 
-const mapStateToProps = state => ({ books: state.booksReducer.books });
+const mapStateToProps = state => ({
+  books: state.booksReducer.books,
+});
 
-function BooksList(props) {
-  const { books } = props;
-  return (
-    <table>
-      <thead>
-        <th>
-          <td>ID</td>
-          <td>Title</td>
-          <td>Category</td>
-        </th>
-      </thead>
-      <tbody>
-        {
-          books.map(book => (
-            <Book
-              key={book.idBook}
-              book={{
-                idBook: book.idBook,
-                title: book.title,
-                category: book.category,
-              }}
-            />
-          ))
-        }
-      </tbody>
-    </table>
-  );
+const mapDispatchToProps = dispatch => ({
+  removeBook: idBook => dispatch(removeBook(idBook)),
+});
+
+class BooksList extends Component {
+  constructor(props) {
+    super(props);
+    this.handleRemoveBook = this.handleRemoveBook.bind(this);
+  }
+
+  handleRemoveBook(idBook) {
+    const { removeBook } = this.props;
+    removeBook(idBook);
+  }
+
+  render() {
+    const { books } = this.props;
+    return (
+      <table>
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Category</td>
+            <td>Delete</td>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map(b => (<Book key={b.idBook} book={b} onClick={this.handleRemoveBook} />))}
+        </tbody>
+      </table>
+    );
+  }
 }
 
 BooksList.propTypes = {
@@ -42,6 +51,7 @@ BooksList.propTypes = {
       category: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(BooksList);
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
