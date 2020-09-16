@@ -10,7 +10,13 @@ const removeBook = idBook => ({
   payload: idBook,
 });
 
+const filterChange = category => ({
+  type: ActionTypes.CHANGE_FILTER,
+  payload: category,
+});
+
 export {
   createBook,
   removeBook,
+  filterChange,
 };
