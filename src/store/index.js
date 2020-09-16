@@ -12,8 +12,9 @@ const initialState = {
     { idBook: randonId(), title: 'book4', category: 'Action' },
     { idBook: randonId(), title: 'book5', category: 'Action' },
   ],
+  filter: '',
 };
 
 // eslint-disable-next-line import/prefer-default-export
 export const store = createStore(rootReducer(initialState), composeWithDevTools());
-// console.log(store.getState());
+console.log(store.getState());
