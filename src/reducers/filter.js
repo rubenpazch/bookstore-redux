@@ -1,14 +1,15 @@
 import * as ActionTypes from '../constants/action-types';
 
-const filterReducer = initialState => (state = initialState, action) => {
+const filterReducer = filter => (InitialFilter = filter, action) => {
   switch (action.type) {
     case ActionTypes.CHANGE_FILTER:
       return {
-        ...state,
-        books: state.books.filter(b => b.category === action.payload),
+        filter: action.payload,
       };
     default:
-      return state;
+      return {
+        filter: InitialFilter,
+      };
   }
 };
 
