@@ -47,7 +47,10 @@ class BooksList extends Component {
             </tr>
           </thead>
           <tbody>
-            {books.map(b => (<Book key={b.idBook} book={b} onClick={this.handleRemoveBook} />))}
+            {books.map(b => (<Book 
+                key={b.idBook} 
+                book={b} 
+                onClick={this.handleRemoveBook} />))}
           </tbody>
         </table>
       </div>
