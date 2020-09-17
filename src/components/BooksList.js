@@ -7,6 +7,7 @@ import CategoryFilter from './CategoryFilter';
 
 const mapStateToProps = state => ({
   books: state.booksReducer.books,
+  category: state.filterReducer.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -26,17 +27,18 @@ class BooksList extends Component {
     removeBook(idBook);
   }
 
-  handleFilterChange(event) {
-    this.setState({ [event.target.id]: event.target.value });
+  handleFilterChange(category) {
     const { filterChange } = this.props;
-    filterChange(event.target.value);
+    filterChange(category);
   }
 
   render() {
-    const { books } = this.props;
+    const { books, category } = this.props;
+    const filterBooks = books.filter(b => b.category === category);
+
     return (
       <div>
-        <CategoryFilter />
+        <CategoryFilter handleFilterChange={this.handleFilterChange} />
         <table>
           <thead>
             <tr>
@@ -47,10 +49,13 @@ class BooksList extends Component {
             </tr>
           </thead>
           <tbody>
-            {books.map(b => (<Book 
-                key={b.idBook} 
-                book={b} 
-                onClick={this.handleRemoveBook} />))}
+            {filterBooks.map(b => (
+              <Book
+                key={b.idBook}
+                book={b}
+                onClick={this.handleRemoveBook}
+              />
+            ))}
           </tbody>
         </table>
       </div>
@@ -69,6 +74,7 @@ BooksList.propTypes = {
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
   filterChange: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
