@@ -28,7 +28,7 @@ class BooksList extends Component {
     const { books } = this.props;
     return (
       <div>
-        <CategoryFilter/>
+        <CategoryFilter />
         <table>
           <thead>
             <tr>
