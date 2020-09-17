@@ -34,7 +34,12 @@ class BooksList extends Component {
 
   render() {
     const { books, category } = this.props;
-    const filterBooks = books.filter(b => b.category === category);
+    let filterBooks = null;
+    if (category === 'All') {
+      filterBooks = books;
+    } else {
+      filterBooks = books.filter(b => b.category === category);
+    }
 
     return (
       <div>
