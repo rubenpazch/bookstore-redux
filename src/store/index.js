@@ -14,6 +14,7 @@ const initialState = {
   ],
 };
 
+const filter = 'All';
+
 // eslint-disable-next-line import/prefer-default-export
-export const store = createStore(rootReducer(initialState), composeWithDevTools());
-// console.log(store.getState());
+export const store = createStore(rootReducer(initialState, filter), composeWithDevTools());
