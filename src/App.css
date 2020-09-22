@@ -38,7 +38,8 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.9px;
-  color: var(--black-three);
+  color: #121212;
+  text-transform: uppercase;
 }
 
 .panel-title {
@@ -70,10 +71,26 @@ body {
 }
 
 .panel-icon{
-  text-align: right;
   width: 100%;
-  padding: 0;
+  padding: 0 10px 0 0;
   margin: 0;
+  text-align: right;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  color: #0290ff;
+}
+
+.rounderIcon{
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  border: 1px solid ;
+  border: solid 1px #e8e8e8;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .itemBook{
@@ -81,10 +98,76 @@ body {
   border: solid 1px #e8e8e8;
   background-color: #ffffff;
   margin-top: 15px;
+  padding: 32px 27px 32px 27px;
 }
 
 .listBookStore {
   padding-top: 37px;
   padding-right: 100px;
   padding-left: 100px;
+}
+
+.category {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.MovieTitle {
+  font-family: RobotoSlab;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal; 
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.Author {
+  font-family: RobotoSlab;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.Links {
+  font-family: RobotoSlab;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.OptionLinks{
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  justify-content: left;
+  padding: 0;
+  margin: 0;
+}
+
+.OptionLinks li{
+  padding: 0 15px 0 15px;
+  margin: 0;
+  height: 24px;
+  border-left: solid 1px #e8e8e8;
+}
+
+.OptionLinks li:first-child{
+  padding: 0 15px 0 0;
+  border-left: 0px;
 }
