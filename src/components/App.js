@@ -4,8 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import Button from 'react-bootstrap/Button';
 import BooksForm from './BooksForm';
 import BooksList from './BooksList';
+
 
 function App() {
   const url = '';
@@ -50,11 +52,43 @@ function App() {
                 </li>
               </ul>
             </Col>
-            <Col>
-              <span>Completed</span>
+            <Col className="itemMovieContainer">
+              <Row className="MovieItem">
+                <Col className="circleProgress">
+                  <div className="progress blue">
+                    <span className="progress-left">
+                      <span className="progress-bar" />
+                    </span>
+                    <span className="progress-right">
+                      <span className="progress-bar" />
+                    </span>
+                    <div className="progress-value" />
+                  </div>
+                </Col>
+                <Col>
+                  <Row className="MovieItemContent">
+                    <Col className="PercentageNumber">
+                      <h2>64%</h2>
+                    </Col>
+                    <Col className="MovieStatus">
+                      <h5>Completed</h5>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
             </Col>
             <Col>
-              <p>Current Chapter</p>
+              <Row className="MovieInfo">
+                <Col>
+                  <h5>Current Chapter</h5>
+                </Col>
+                <Col>
+                  <h6>Chapter 17</h6>
+                </Col>
+                <Col>
+                  <Button variant="primary">Update Progress</Button>
+                </Col>
+              </Row>
             </Col>
           </Row>
 
