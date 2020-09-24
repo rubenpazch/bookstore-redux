@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import BooksForm from './BooksForm';
 import BooksList from './BooksList';
 
-
 function App() {
   const url = '';
   return (
@@ -79,24 +78,18 @@ function App() {
             </Col>
             <Col>
               <Row className="MovieInfo">
-                <Col>
-                  <h5>Current Chapter</h5>
+                <Col className="currentChapter">
+                  <h4>Current Chapter</h4>
+                </Col>
+                <Col className="chapterNumber">
+                  <h5>Chapter 17</h5>
                 </Col>
                 <Col>
-                  <h6>Chapter 17</h6>
-                </Col>
-                <Col>
-                  <Button variant="primary">Update Progress</Button>
+                  <Button variant="primary" className="buttonUpdate">Update Progress</Button>
                 </Col>
               </Row>
             </Col>
           </Row>
-
-        </Col>
-        <Col sm={12} className="itemBook">
-          <h4>Action</h4>
-          <h1>The Hunger Games</h1>
-          <h5>Sizenne Collins</h5>
         </Col>
       </Row>
     </Container>
