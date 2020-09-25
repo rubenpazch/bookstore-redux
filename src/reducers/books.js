@@ -3,15 +3,14 @@ import * as ActionTypes from '../constants/action-types';
 const booksReducer = defaultBooks => (state = defaultBooks, action) => {
   switch (action.type) {
     case ActionTypes.ADD_BOOK:
-      return {
+      return [
         ...state,
-        books: state.defaultBooks,
-      };
+        action.payload,
+      ];
     case ActionTypes.REMOVE_BOOK:
-      return {
+      return [
         ...state,
-        books: state.books.filter(b => b.idBook !== action.payload),
-      };
+      ].filter(bk => bk.idBook !== action.payload);
     default:
       return state;
   }

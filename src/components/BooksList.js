@@ -8,7 +8,7 @@ import CategoryFilter from './CategoryFilter';
 
 const mapStateToProps = state => ({
   books: state.booksReducer,
-  category: state.filterReducer,
+  filter: state.filterReducer,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -34,12 +34,12 @@ class BooksList extends Component {
   }
 
   render() {
-    const { books, category } = this.props;
+    const { books, filter } = this.props;
     let filterBooks = null;
-    if (category.filter === 'All') {
+    if (filter === 'All') {
       filterBooks = books;
     } else {
-      filterBooks = books.filter(b => b.category === category.filter);
+      filterBooks = books.filter(b => b.category === filter);
     }
 
     return (
@@ -58,7 +58,7 @@ class BooksList extends Component {
 }
 
 BooksList.defaultProps = {
-  category: { filter: 'All' },
+  filter: 'All',
 };
 
 BooksList.propTypes = {
@@ -71,9 +71,7 @@ BooksList.propTypes = {
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
   filterChange: PropTypes.func.isRequired,
-  category: PropTypes.shape({
-    filter: PropTypes.string.isRequired,
-  }),
+  filter: PropTypes.string,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
