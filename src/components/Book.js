@@ -8,7 +8,7 @@ function Book({ book, onClick }) {
   const { idBook, title, category } = book;
   const url = '';
   return (
-    <Col sm={12} className="itemBook">
+    <Col md={12} className="itemBook">
       <Row>
         <Col>
           <h4 className="category">{category}</h4>
@@ -19,8 +19,7 @@ function Book({ book, onClick }) {
               <a href={url} className="Links">Comments</a>
             </li>
             <li>
-              <a href={url} className="Links" onClick={() => onClick(idBook)}>Remove</a>
-              <button type="button" onClick={() => onClick(idBook)}>Delete</button>
+              <button type="button" className="buttonSubmit" onClick={() => onClick(idBook)}>Delete</button>
             </li>
             <li>
               <a href={url} className="Links">Edit</a>

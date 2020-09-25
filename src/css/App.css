@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoSlab;
+  src: url(../fonts/RobotoSlab-Regular.ttf);
+}
+
 body {
   background-color: #f5f6fa;
 }
@@ -13,6 +23,7 @@ body {
 
 .panel-main{
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 150px;
 }
 
 .Bookstore-CMS{
@@ -103,8 +114,8 @@ body {
 
 .listBookStore {
   padding-top: 37px;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 60px;
+  padding-left: 60px;
 }
 
 .category {
@@ -273,6 +284,72 @@ body {
   font-family: RobotoSlab;
   font-size: 13px;
   font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.buttonSubmit{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: RobotoSlab;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.formContainer{
+  margin-top: 57px;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+.formAddBook{
+  padding-right: 100px;
+  padding-left: 5px; 
+  padding-bottom: 100px;
+}
+
+.titleAddBook{
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888888;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.titleAddBook h1{
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.formInputsBooks{
+  display: flex;
+  flex-flow: row;
+}
+
+.InputsForms{
+  padding: 0;
+  margin: 0;
+  margin-right: 25px;
+}
+
+.buttonSave{
+  width: 250px;
+  font-family: RobotoSlab;
+  font-size: 13px;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;

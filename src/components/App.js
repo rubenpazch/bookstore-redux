@@ -33,7 +33,7 @@ function App() {
       <Row className="listBookStore">
         <BooksList />
       </Row>
-      <Row>
+      <Row className="formContainer">
         <BooksForm />
       </Row>
     </Container>
