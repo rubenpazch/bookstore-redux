@@ -1,11 +1,11 @@
 import * as ActionTypes from '../constants/action-types';
 
-const booksReducer = initialState => (state = initialState, action) => {
+const booksReducer = defaultBooks => (state = defaultBooks, action) => {
   switch (action.type) {
     case ActionTypes.ADD_BOOK:
       return {
         ...state,
-        books: state.books.concat(action.payload),
+        books: state.defaultBooks,
       };
     case ActionTypes.REMOVE_BOOK:
       return {
