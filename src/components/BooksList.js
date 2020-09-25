@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import Row from 'react-bootstrap/Row';
 import PropTypes from 'prop-types';
 import Book from './Book';
 import { removeBook, filterChange } from '../actions/index';
@@ -34,6 +35,7 @@ class BooksList extends Component {
 
   render() {
     const { books, category } = this.props;
+    console.log(books);
     let filterBooks = null;
     if (category === 'All') {
       filterBooks = books;
@@ -42,29 +44,17 @@ class BooksList extends Component {
     }
 
     return (
-      <div>
-        <CategoryFilter handleFilterChange={this.handleFilterChange} />
-        <table>
-          <thead>
-            <tr>
-              <td>Id</td>
-              <td>Title</td>
-              <td>Category</td>
-              <td>Delete</td>
-            </tr>
-          </thead>
-          <tbody>
-            {filterBooks.map(b => (
-              <Book
-                key={b.idBook}
-                book={b}
-                onClick={this.handleRemoveBook}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
 
+      <Row className="listBookStore">
+        <CategoryFilter handleFilterChange={this.handleFilterChange} />
+        {filterBooks.map(b => (
+          <Book
+            key={b.idBook}
+            book={b}
+            onClick={this.handleRemoveBook}
+          />
+        ))}
+      </Row>
     );
   }
 }
