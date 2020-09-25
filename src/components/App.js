@@ -33,6 +33,9 @@ function App() {
       <Row className="listBookStore">
         <BooksList />
       </Row>
+      <Row>
+        <BooksForm />
+      </Row>
     </Container>
 
   );
