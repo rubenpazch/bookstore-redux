@@ -7,8 +7,8 @@ import { removeBook, filterChange } from '../actions/index';
 import CategoryFilter from './CategoryFilter';
 
 const mapStateToProps = state => ({
-  books: state.booksReducer.books,
-  category: state.filterReducer.filter,
+  books: state.booksReducer,
+  category: state.filterReducer,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -35,21 +35,19 @@ class BooksList extends Component {
 
   render() {
     const { books, category } = this.props;
-    console.log(books);
     let filterBooks = null;
-    if (category === 'All') {
+    if (category.filter === 'All') {
       filterBooks = books;
     } else {
-      filterBooks = books.filter(b => b.category === category);
+      filterBooks = books.filter(b => b.category === category.filter);
     }
 
     return (
-
       <Row className="listBookStore">
         <CategoryFilter handleFilterChange={this.handleFilterChange} />
         {filterBooks.map(b => (
           <Book
-            key={b.idBook}
+            key={b.title}
             book={b}
             onClick={this.handleRemoveBook}
           />
@@ -58,6 +56,10 @@ class BooksList extends Component {
     );
   }
 }
+
+BooksList.defaultProps = {
+  category: { filter: 'All' },
+};
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
@@ -69,7 +71,9 @@ BooksList.propTypes = {
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
   filterChange: PropTypes.func.isRequired,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.shape({
+    filter: PropTypes.string.isRequired,
+  }),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
