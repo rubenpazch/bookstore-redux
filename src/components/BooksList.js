@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import Row from 'react-bootstrap/Row';
 import PropTypes from 'prop-types';
 import Book from './Book';
 import { removeBook, filterChange } from '../actions/index';
 import CategoryFilter from './CategoryFilter';
 
 const mapStateToProps = state => ({
-  books: state.booksReducer.books,
-  category: state.filterReducer.filter,
+  books: state.booksReducer,
+  filter: state.filterReducer,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -33,41 +34,32 @@ class BooksList extends Component {
   }
 
   render() {
-    const { books, category } = this.props;
+    const { books, filter } = this.props;
     let filterBooks = null;
-    if (category === 'All') {
+    if (filter === 'All') {
       filterBooks = books;
     } else {
-      filterBooks = books.filter(b => b.category === category);
+      filterBooks = books.filter(b => b.category === filter);
     }
 
     return (
-      <div>
+      <Row className="listBookStore">
         <CategoryFilter handleFilterChange={this.handleFilterChange} />
-        <table>
-          <thead>
-            <tr>
-              <td>Id</td>
-              <td>Title</td>
-              <td>Category</td>
-              <td>Delete</td>
-            </tr>
-          </thead>
-          <tbody>
-            {filterBooks.map(b => (
-              <Book
-                key={b.idBook}
-                book={b}
-                onClick={this.handleRemoveBook}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-
+        {filterBooks.map(b => (
+          <Book
+            key={b.title}
+            book={b}
+            onClick={this.handleRemoveBook}
+          />
+        ))}
+      </Row>
     );
   }
 }
+
+BooksList.defaultProps = {
+  filter: 'All',
+};
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
@@ -79,7 +71,7 @@ BooksList.propTypes = {
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
   filterChange: PropTypes.func.isRequired,
-  category: PropTypes.string.isRequired,
+  filter: PropTypes.string,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

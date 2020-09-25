@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./images/shooter.png"
+    <img src="./print.png"
         height="230">
 </p>
 
@@ -62,7 +62,9 @@ This project was built using Javascript 6, React, and Redux, it is a web applica
 - Javascript 6
 - NPM
 - Node
-
+- Redux
+- React
+- Bootstrap
 
 ### Setup
 
@@ -135,7 +137,7 @@ npm start
 
 After running the above command you will see in your console like a log of activity if everything is ok you will see something like this:
 
-![screenshot](./server.png)
+![screenshot](./print.png)
 
 
 

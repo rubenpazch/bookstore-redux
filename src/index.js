@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import { store } from './store/index';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/App.css';
+import './css/progressBar.css';
 
 ReactDOM.render(
   <Provider store={store}>

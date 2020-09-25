@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 import { createBook } from '../actions/index';
 
@@ -38,20 +42,27 @@ class Booksform extends Component {
   render() {
     const { title } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="book-title">
-          Title
-          <input type="text" id="title" value={title} onChange={this.handleChange} />
-        </label>
-        <label htmlFor="book-title">
-          Categorie
-          <select name="category" id="category" onChange={this.handleChange}>
-            <option>Choose a category</option>
-            {categories.map(c => <option key={c} value={c}>{c}</option>)}
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <Col className="formAddBook" md={12}>
+        <Row className="titleAddBook">
+          <h1>ADD NEW BOOK</h1>
+        </Row>
+
+        <form onSubmit={this.handleSubmit} className="formInputsBooks">
+          <Col className="InputsForms" md={6}>
+            <Form.Control type="text" placeholder="Normal text" id="title" value={title} onChange={this.handleChange} />
+          </Col>
+          <Col className="InputsForms" md={3}>
+            <Form.Control as="select" name="category" id="category" onChange={this.handleChange}>
+              <option>Category</option>
+              {categories.map(c => <option key={c} value={c}>{c}</option>)}
+            </Form.Control>
+          </Col>
+          <Col className="InputsForms" md={3}>
+            <Button variant="primary" type="submit" value="Submit" className="buttonSave">ADD BOOK</Button>
+          </Col>
+        </form>
+
+      </Col>
     );
   }
 }
